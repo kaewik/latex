@@ -1,8 +1,17 @@
 \documentclass{scrreprt}	%KOMA-Script Klasse für report; 
 
 % HEADER
-\usepackage[english, german]{babel}	% Paket für Sprachselektion, in diesem Fall für deutsches Datum etc
+\usepackage[english, ngerman]{babel}	% Paket für Sprachselektion, in diesem Fall für deutsches Datum etc
 \usepackage[utf8]{inputenc}	% Paket für Umlaute; verwende utf8 Kodierung in TexWorks 
+\usepackage[T1]{fontenc} %ö,ü,ä werden richtig kodiert
+
+\usepackage{amsmath} %wichtig für align-Umgebung
+\usepackage{amssymb} %wichtig für \mathbb{} usw.
+\usepackage{amsthm} %damit kann man eigene Theorem-Umgebungen definieren, proof-Umgebungen, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% THEOREM-ENVIRONMENTS
+\newtheorem{satz}{Satz} %wird noch verbessert hier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % FONT
@@ -14,6 +23,21 @@
 \setcounter{tocdepth}{2}	% Inhaltsverzeichnistiefe = 2(von part(0) bis subsection(2))
 \bibliographystyle{plain}	% Literaturverzeichnisformat = standard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%OTHER OPTIONS
+\setlength{\parindent}{0px} %dieser Befehl verhindert das Einrücken eines Absatzes bei einer leeren Codezeile. 
+
+%SHORTCUTS
+\newcommand{\R}{\mathbb{R}} %reelle Zahlen
+\newcommand{\N}{\mathbb{N}} %natürliche Zahlen
+\newcommand{\Z}{\mathbb{Z}} %ganze Zahlen
+\newcommand{\C}{\mathbb{C}} %komplexe Zahlen
+
+\newcommand{\stackeq}[1]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{=}}} %das ist ein Gleichheitszeichen mit Text darüber, Beispiel: $a\stackeq{Def} b$
+\newcommand{\stacksymbol}[2]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{#2}}} %das ist ein beliebiges Zeichen mit Text darüber, z. B. $a\stackrel{Def}{\Rightarrow} b$
+\newcommand\tab[1][1cm]{\hspace*{#1}} %praktischer Tabulator
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 \pagenumbering{gobble}	% disable pagenumbering
@@ -40,10 +64,11 @@
 \paragraph{Überschrift1}
 \subparagraph{Unterüberschrift1}
 Lorem ipsum dolor sit amet\footnote{Fußnote}\footnote{Fußnote}, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet\footnote{Fußnote}. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet\cite{dummy}.
-$$
+\begin{align*}
  \sum_{k = 0}^{ \infty} \frac{x^{k}}{k!} = \exp(x)
 \sum_{x_0 \le x_1 \le x_2 \le ... \le x_n} a_j
-$$
+\end{align*}
+
 \listoffigures
 \listoftables
 \bibliography{literatur}
