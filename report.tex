@@ -1,43 +1,10 @@
-\documentclass[pointlessnumbers]{scrreprt}	%KOMA-Script Klasse für report; 
+\documentclass[pointlessnumbers]{scrreprt} %KOMA-Script Klasse für report; 
 
 % HEADER
-\usepackage[english, ngerman]{babel}	% Paket für Sprachselektion, in diesem Fall für deutsches Datum etc
-\usepackage[utf8]{inputenc}	% Paket für Umlaute; verwende utf8 Kodierung in TexWorks 
-\usepackage[T1]{fontenc} %ö,ü,ä werden richtig kodiert
-
-\usepackage{amsmath} %wichtig für align-Umgebung
-\usepackage{amssymb} %wichtig für \mathbb{} usw.
-\usepackage{amsthm} %damit kann man eigene Theorem-Umgebungen definieren, proof-Umgebungen, etc.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% THEOREM-ENVIRONMENTS
-\newtheorem{satz}{Satz} %wird noch verbessert hier
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% FONT
-\KOMAoption{paper}{a4}
-\KOMAoption{fontsize}{11pt}	% Grundschriftgröße = 11pt
-\KOMAoption{headings}{normal}	% Überschriften = normalgroß
-\KOMAoption{toc}{left, listof, bib, chapterentrywithdots}	% Inhaltsverzeichnis = tabellenform links ausgerichtet; Tabellen- und Abbildungsverzeichnis haben Eintrag; Literaturverzeichnis hat einen Eintrag;  Kaptiel haben Punkte
-\KOMAoption{footnotes}{multiple} % Fußnotenstyle = automatischer Trenner, falls mehrere Fußnoten direkt hintereinander stehen
-\setcounter{tocdepth}{2}	% Inhaltsverzeichnistiefe = 2(von part(0) bis subsection(2))
-\bibliographystyle{plain}	% Literaturverzeichnisformat = standard
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%OTHER OPTIONS
-\setlength{\parindent}{0px} %dieser Befehl verhindert das Einrücken eines Absatzes bei einer leeren Codezeile. 
-
-%SHORTCUTS
-\newcommand{\R}{\mathbb{R}} %reelle Zahlen
-\newcommand{\N}{\mathbb{N}} %natürliche Zahlen
-\newcommand{\Z}{\mathbb{Z}} %ganze Zahlen
-\newcommand{\C}{\mathbb{C}} %komplexe Zahlen
-
-\newcommand{\stackeq}[1]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{=}}} %das ist ein Gleichheitszeichen mit Text darüber, Beispiel: $a\stackeq{Def} b$
-\newcommand{\stacksymbol}[2]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{#2}}} %das ist ein beliebiges Zeichen mit Text darüber, z. B. $a\stackrel{Def}{\Rightarrow} b$
-\newcommand\tab[1][1cm]{\hspace*{#1}} %praktischer Tabulator
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\input{packages}
+\input{theoremenvironments}
+\input{font}
+\input{commands}
 
 \begin{document}
 \pagenumbering{gobble}	% disable pagenumbering
