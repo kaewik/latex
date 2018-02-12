@@ -1,0 +1,15 @@
+%THEOREM-ENVIRONMENTS
+% Definitionen der Satz, Lemma... - Umgebungen. Der Zähler von "satz" ist dem "section"-Zähler untergeordnet, alle weiteren Umgebungen bedienen sich des satz-Zählers.
+\theoremstyle{definition} % sorgt dafür, dass es nicht kursiv ist
+\newtheorem{satz}{Satz}[section]
+\newtheorem{lemma}[satz]{Lemma}
+\newtheorem{korollar}[satz]{Korollar}
+\newtheorem{proposition}[satz]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[satz]{Definition}
+
+% Bemerkungen, Erinnerungen und Beispiele werden ohne Numerierungen dargestellt.
+\newtheorem*{bemerkung}{Bemerkung}
+\newtheorem*{erinnerung}{Erinnerung}
+\newtheorem*{beispiel}{Beispiel}

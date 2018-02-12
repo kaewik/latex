@@ -1,19 +1,10 @@
-\documentclass{scrreprt}	%KOMA-Script Klasse für report; 
+\documentclass[pointlessnumbers]{scrreprt} %KOMA-Script Klasse für report; 
 
 % HEADER
-\usepackage[english, german]{babel}	% Paket für Sprachselektion, in diesem Fall für deutsches Datum etc
-\usepackage[utf8]{inputenc}	% Paket für Umlaute; verwende utf8 Kodierung in TexWorks 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% FONT
-\KOMAoption{paper}{a4}
-\KOMAoption{fontsize}{11pt}	% Grundschriftgröße = 11pt
-\KOMAoption{headings}{normal}	% Überschriften = normalgroß
-\KOMAoption{toc}{left, listof, bib, chapterentrywithdots}	% Inhaltsverzeichnis = tabellenform links ausgerichtet; Tabellen- und Abbildungsverzeichnis haben Eintrag; Literaturverzeichnis hat einen Eintrag;  Kaptiel haben Punkte
-\KOMAoption{footnotes}{multiple} % Fußnotenstyle = automatischer Trenner, falls mehrere Fußnoten direkt hintereinander stehen
-\setcounter{tocdepth}{2}	% Inhaltsverzeichnistiefe = 2(von part(0) bis subsection(2))
-\bibliographystyle{plain}	% Literaturverzeichnisformat = standard
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{packages}
+\input{theoremenvironments}
+\input{font}
+\input{commands}
 
 \begin{document}
 \pagenumbering{gobble}	% disable pagenumbering
@@ -40,10 +31,11 @@
 \paragraph{Überschrift1}
 \subparagraph{Unterüberschrift1}
 Lorem ipsum dolor sit amet\footnote{Fußnote}\footnote{Fußnote}, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet\footnote{Fußnote}. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet\cite{dummy}.
-$$
+\begin{align*}
  \sum_{k = 0}^{ \infty} \frac{x^{k}}{k!} = \exp(x)
 \sum_{x_0 \le x_1 \le x_2 \le ... \le x_n} a_j
-$$
+\end{align*}
+
 \listoffigures
 \listoftables
 \bibliography{literatur}
