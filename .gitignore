@@ -1,4 +1,1 @@
-*.*
-!*.tex
-!*.bib
-!.gitignore
+bin/
